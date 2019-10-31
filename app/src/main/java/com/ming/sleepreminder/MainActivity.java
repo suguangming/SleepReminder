@@ -6,12 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
-import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,20 +15,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView timeTextView1 = findViewById(R.id.timeTextView1);
-        TextView timeTextView2 = findViewById(R.id.timeTextView2);
-        TextView timeTextView3 = findViewById(R.id.timeTextView3);
 
+        //get elements
+        TextView dateTextView = findViewById(R.id.dateTextView);
+        TextView timeTextView = findViewById(R.id.timeTextView);
+        TextView hoursLeftTextView = findViewById(R.id.hoursLeftTextView);
+        TextView cyclesLeftTextView = findViewById(R.id.cyclesLeftTextView);
+
+
+        //get time
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
+        String hourStr;
+        String minuteStr;
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
-        String nowTimeStr = year+"年"+month+"月"+day+"日"+hour+":"+minute;
-        timeTextView1.setText(nowTimeStr);
+
+
+        //set time
+        if (hour < 10){
+            hourStr = "0"+hour;
+        } else {
+            hourStr = String.format("%s",hour);
+        }
+        if (minute < 10){
+            minuteStr = "0"+minute;
+        } else {
+            minuteStr = String.format("%s",minute);
+        }
+
+        String nowDateStr = year+"年"+month+"月"+day+"日";
+        String nowTimeStr = hourStr+":"+minuteStr;
+        dateTextView.setText(nowDateStr);
+        timeTextView.setText(nowTimeStr);
 
         int hoursLeft = 0;
         int minutesLeft = 0;
@@ -46,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         double oneCycle = 90.0;
         double cyclesLeft =minutesLeft/oneCycle;
 
-        timeTextView2.setText(String.format("%s",hoursLeft));
-        timeTextView3.setText((new DecimalFormat("0.00")).format(cyclesLeft));
+        hoursLeftTextView.setText(String.format("%s",hoursLeft));
+        cyclesLeftTextView.setText((new DecimalFormat("0.00")).format(cyclesLeft));
     }
 }

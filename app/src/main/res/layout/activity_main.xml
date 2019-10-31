@@ -12,18 +12,30 @@
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="现在是"
+        android:textAlignment="center"
         android:textSize="28sp"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="date"
+        android:textAlignment="center"
+        android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="sans" />
 
     <TextView
-        android:id="@+id/timeTextView1"
+        android:id="@+id/timeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="time"
+        android:textAlignment="center"
         android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="sans" />
@@ -33,17 +45,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="距离 7 点起床，还可以睡"
+        android:text="距离 07 点起床，还可以睡"
+        android:textAlignment="center"
         android:textSize="28sp"
-        android:textStyle="bold"
         android:typeface="sans" />
 
     <TextView
-        android:id="@+id/timeTextView2"
+        android:id="@+id/hoursLeftTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="na"
+        android:textAlignment="center"
         android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="sans" />
@@ -54,16 +67,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="个小时，折合"
+        android:textAlignment="center"
         android:textSize="28sp"
-        android:textStyle="bold"
         android:typeface="sans" />
 
     <TextView
-        android:id="@+id/timeTextView3"
+        android:id="@+id/cyclesLeftTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="na"
+        android:textAlignment="center"
         android:textSize="36sp"
         android:textStyle="bold"
         android:typeface="sans" />
@@ -74,8 +88,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="个睡眠周期"
+        android:textAlignment="center"
         android:textSize="28sp"
-        android:textStyle="bold"
         android:typeface="sans" />
 
 </LinearLayout>
