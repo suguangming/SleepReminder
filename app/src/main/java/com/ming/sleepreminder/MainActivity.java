@@ -7,6 +7,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -72,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
         cyclesLeft =minutesLeft/oneCycle;
 //        hoursLeftTextView.setText(String.format("%s",hoursLeft));
 //        cyclesLeftTextView.setText((new DecimalFormat("0.00")).format(cyclesLeft));
+
+        if (cyclesLeft < 4.0)
+            cyclesLeftTextView.setTextColor(Color.RED);
+        else if (cyclesLeft < 4.3)
+            cyclesLeftTextView.setTextColor(Color.YELLOW);
+        else
+            cyclesLeftTextView.setTextColor(0xff006400);//darkgreen
+
 
         //Notification
         NotificationManager manager;
